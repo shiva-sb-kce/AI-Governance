@@ -1,0 +1,51 @@
+{
+    "POLICY-001": {
+        "name": "Prompt Injection",
+        "description": "Block requests containing confirmed prompt injection indicators.",
+        "category": "INPUT_SECURITY",
+        "severity": 25,
+        "action": "BLOCK"
+    },
+    "POLICY-002": {
+        "name": "Jailbreak Attempt",
+        "description": "Block attempts to bypass AI safety or governance controls.",
+        "category": "INPUT_SECURITY",
+        "severity": 25,
+        "action": "BLOCK"
+    },
+    "POLICY-003": {
+        "name": "Sensitive Data External Transfer",
+        "description": "Require approval or block when sensitive information is transferred externally.",
+        "category": "DATA_SECURITY",
+        "severity": 25,
+        "action": "APPROVAL"
+    },
+    "POLICY-004": {
+        "name": "Unauthorized Agent Action",
+        "description": "Block an agent from performing an action outside its assigned permissions.",
+        "category": "ACCESS_CONTROL",
+        "severity": 25,
+        "action": "BLOCK"
+    },
+    "POLICY-005": {
+        "name": "Protected Resource Modification",
+        "description": "Require approval or block modifications to protected resources.",
+        "category": "RESOURCE_SECURITY",
+        "severity": 25,
+        "action": "APPROVAL"
+    },
+    "POLICY-006": {
+        "name": "Secret Exposure",
+        "description": "Block outputs containing detected credentials or secrets.",
+        "category": "OUTPUT_SECURITY",
+        "severity": 25,
+        "action": "BLOCK"
+    },
+    "POLICY-007": {
+        "name": "Dangerous Agent Tool",
+        "description": "Require governance approval before executing high-risk tools.",
+        "category": "AGENT_SECURITY",
+        "severity": 25,
+        "action": "APPROVAL"
+    }
+}

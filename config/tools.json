@@ -1,0 +1,44 @@
+{
+    "read_file": {
+        "risk": 10,
+        "required_permission": "read",
+        "approval_required": false,
+        "protected": false
+    },
+    "write_file": {
+        "risk": 40,
+        "required_permission": "write",
+        "approval_required": true,
+        "protected": false
+    },
+    "delete_file": {
+        "risk": 80,
+        "required_permission": "delete",
+        "approval_required": true,
+        "protected": true
+    },
+    "execute_command": {
+        "risk": 90,
+        "required_permission": "execute",
+        "approval_required": true,
+        "protected": true
+    },
+    "send_email": {
+        "risk": 70,
+        "required_permission": "external_send",
+        "approval_required": true,
+        "protected": false
+    },
+    "database_read": {
+        "risk": 50,
+        "required_permission": "database_read",
+        "approval_required": true,
+        "protected": true
+    },
+    "database_write": {
+        "risk": 90,
+        "required_permission": "database_write",
+        "approval_required": true,
+        "protected": true
+    }
+}

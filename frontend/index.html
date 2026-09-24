@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Unified AI Governance & Security Platform"
+    >
+
+    <title>
+        Unified AI Governance & Security Platform
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/dashboard-ui/style.css?v=4"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                AI
+            </div>
+
+            <div class="brand-text">
+
+                <div class="brand-title">
+                    AI GOVERNANCE
+                </div>
+
+                <div class="brand-subtitle">
+                    SECURITY PLATFORM
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <a
+                id="navDashboard"
+                class="nav-item active"
+                href="#"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                id="navSecurity"
+                class="nav-item"
+                href="#"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Security
+                </span>
+
+            </a>
+
+
+            <a
+                id="navApprovals"
+                class="nav-item"
+                href="#"
+            >
+
+                <span class="nav-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Approvals
+                </span>
+
+            </a>
+
+
+            <a
+                id="navAudit"
+                class="nav-item"
+                href="#"
+            >
+
+                <span class="nav-icon">
+                    ◷
+                </span>
+
+                <span>
+                    Audit Logs
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Footer -->
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    System Online
+                </span>
+
+            </div>
+
+            <div class="version">
+                v1.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN APPLICATION
+         ===================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             DASHBOARD VIEW
+             ================================================= -->
+
+        <section
+            id="dashboardView"
+            class="page-section"
+        >
+
+
+            <!-- Top Bar -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <h1>
+                        Governance Dashboard
+                    </h1>
+
+                    <p>
+                        Real-time AI governance,
+                        risk and security monitoring
+                    </p>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <span
+                        id="lastUpdated"
+                        class="last-updated"
+                    >
+                        Loading...
+                    </span>
+
+
+                    <button
+                        id="refreshBtn"
+                        class="refresh-btn"
+                        type="button"
+                    >
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+                 ================================================= -->
+
+            <section class="stats-grid">
+
+
+                <!-- Total Events -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-header">
+
+                        <span>
+                            TOTAL EVENTS
+                        </span>
+
+                        <span class="stat-icon">
+                            ◈
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="totalEvents"
+                        class="stat-value"
+                    >
+                        0
+                    </div>
+
+
+                    <div class="stat-label">
+                        Governance decisions
+                    </div>
+
+                </div>
+
+
+
+                <!-- Blocked -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-header">
+
+                        <span>
+                            BLOCKED
+                        </span>
+
+                        <span class="stat-icon">
+                            ⛔
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="blocked"
+                        class="stat-value"
+                    >
+                        0
+                    </div>
+
+
+                    <div class="stat-label">
+                        Blocked requests
+                    </div>
+
+                </div>
+
+
+
+                <!-- Approvals -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-header">
+
+                        <span>
+                            APPROVALS
+                        </span>
+
+                        <span class="stat-icon">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="approvals"
+                        class="stat-value"
+                    >
+                        0
+                    </div>
+
+
+                    <div class="stat-label">
+                        Approval decisions
+                    </div>
+
+                </div>
+
+
+
+                <!-- Average Risk -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-header">
+
+                        <span>
+                            AVERAGE RISK
+                        </span>
+
+                        <span class="stat-icon">
+                            ◉
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="averageRisk"
+                        class="stat-value"
+                    >
+                        --
+                    </div>
+
+
+                    <div class="stat-label">
+                        Overall risk score
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 DECISION DISTRIBUTION
+                 ================================================= -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Decision Distribution
+                        </h2>
+
+                        <span>
+                            Governance decisions by type
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="decision-list">
+
+
+                    <!-- ALLOW -->
+
+                    <div class="decision-row">
+
+                        <div class="decision-info">
+
+                            <span class="decision-name">
+                                ALLOW
+                            </span>
+
+                            <span
+                                id="allowCount"
+                                class="decision-count"
+                            >
+                                0
+                            </span>
+
+                        </div>
+
+
+                        <div class="decision-track">
+
+                            <div
+                                id="allowBar"
+                                class="decision-bar allow-bar"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BLOCK -->
+
+                    <div class="decision-row">
+
+                        <div class="decision-info">
+
+                            <span class="decision-name">
+                                BLOCK
+                            </span>
+
+                            <span
+                                id="blockCount"
+                                class="decision-count"
+                            >
+                                0
+                            </span>
+
+                        </div>
+
+
+                        <div class="decision-track">
+
+                            <div
+                                id="blockBar"
+                                class="decision-bar block-bar"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- APPROVAL -->
+
+                    <div class="decision-row">
+
+                        <div class="decision-info">
+
+                            <span class="decision-name">
+                                APPROVAL
+                            </span>
+
+                            <span
+                                id="approvalCount"
+                                class="decision-count"
+                            >
+                                0
+                            </span>
+
+                        </div>
+
+
+                        <div class="decision-track">
+
+                            <div
+                                id="approvalBar"
+                                class="decision-bar approval-bar"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MONITOR -->
+
+                    <div class="decision-row">
+
+                        <div class="decision-info">
+
+                            <span class="decision-name">
+                                MONITOR
+                            </span>
+
+                            <span
+                                id="monitorCount"
+                                class="decision-count"
+                            >
+                                0
+                            </span>
+
+                        </div>
+
+
+                        <div class="decision-track">
+
+                            <div
+                                id="monitorBar"
+                                class="decision-bar monitor-bar"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 THREATS / ENTITIES / ACTIONS
+                 ================================================= -->
+
+            <section class="three-column-grid">
+
+
+                <!-- Threats -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                Threat Activity
+                            </h2>
+
+                            <span>
+                                Detected security threats
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="threatList"
+                        class="list-container"
+                    >
+
+                        <div class="list-row">
+
+                            <span class="list-name">
+                                Loading...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Entities -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                Entity Activity
+                            </h2>
+
+                            <span>
+                                Requests by entity type
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="entityList"
+                        class="list-container"
+                    >
+
+                        <div class="list-row">
+
+                            <span class="list-name">
+                                Loading...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Actions -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                Action Activity
+                            </h2>
+
+                            <span>
+                                Tool actions evaluated
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="actionList"
+                        class="list-container"
+                    >
+
+                        <div class="list-row">
+
+                            <span class="list-name">
+                                Loading...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECENT ACTIVITY
+                 ================================================= -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Governance Activity
+                        </h2>
+
+                        <span>
+                            Latest governance decisions
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Time
+                                </th>
+
+                                <th>
+                                    Entity
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                                <th>
+                                    Decision
+                                </th>
+
+                                <th>
+                                    Risk
+                                </th>
+
+                                <th>
+                                    Event
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="activityTable"
+                        >
+
+                            <tr>
+
+                                <td colspan="6">
+                                    Loading activity...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SECURITY EVALUATION
+                 ================================================= -->
+
+            <section
+                id="securityEvaluationView"
+                class="panel evaluation-panel"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Security Evaluation
+                        </h2>
+
+                        <span>
+                            Adversarial security evaluation
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="evaluationStatus"
+                        class="evaluation-status"
+                    >
+                        LOADING
+                    </div>
+
+                </div>
+
+
+
+                <!-- Scenario Count -->
+
+                <div class="evaluation-scenario-info">
+
+                    <span>
+                        Evaluation Corpus
+                    </span>
+
+                    <strong
+                        id="evaluationScenarioCount"
+                    >
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+
+                <!-- Metrics -->
+
+                <div class="evaluation-metrics">
+
+
+                    <!-- Accuracy -->
+
+                    <div class="evaluation-metric">
+
+                        <span>
+                            Accuracy
+                        </span>
+
+                        <strong
+                            id="evalAccuracy"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- Precision -->
+
+                    <div class="evaluation-metric">
+
+                        <span>
+                            Precision
+                        </span>
+
+                        <strong
+                            id="evalPrecision"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- Recall -->
+
+                    <div class="evaluation-metric">
+
+                        <span>
+                            Recall
+                        </span>
+
+                        <strong
+                            id="evalRecall"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- F1 -->
+
+                    <div class="evaluation-metric">
+
+                        <span>
+                            F1 Score
+                        </span>
+
+                        <strong
+                            id="evalF1"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- Detection -->
+
+                    <div class="evaluation-metric">
+
+                        <span>
+                            Attack Detection
+                        </span>
+
+                        <strong
+                            id="evalDetection"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- False Positive Rate -->
+
+                    <div class="evaluation-metric">
+
+                        <span>
+                            False Positive Rate
+                        </span>
+
+                        <strong
+                            id="evalFPR"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Confusion Matrix -->
+
+                <div class="evaluation-confusion">
+
+                    <div class="confusion-title">
+                        Confusion Matrix
+                    </div>
+
+
+                    <div class="confusion-grid">
+
+
+                        <div class="confusion-card">
+
+                            <span>
+                                TRUE POSITIVE
+                            </span>
+
+                            <strong
+                                id="evalTP"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="confusion-card">
+
+                            <span>
+                                TRUE NEGATIVE
+                            </span>
+
+                            <strong
+                                id="evalTN"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="confusion-card">
+
+                            <span>
+                                FALSE POSITIVE
+                            </span>
+
+                            <strong
+                                id="evalFP"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="confusion-card">
+
+                            <span>
+                                FALSE NEGATIVE
+                            </span>
+
+                            <strong
+                                id="evalFN"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Scenario Results -->
+
+                <div class="evaluation-results">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h3>
+                                Evaluation Scenarios
+                            </h3>
+
+                            <span>
+                                Expected vs predicted security classification
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        ID
+                                    </th>
+
+                                    <th>
+                                        Scenario
+                                    </th>
+
+                                    <th>
+                                        Expected
+                                    </th>
+
+                                    <th>
+                                        Predicted
+                                    </th>
+
+                                    <th>
+                                        Decision
+                                    </th>
+
+                                    <th>
+                                        Risk
+                                    </th>
+
+                                    <th>
+                                        Result
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="evaluationTable"
+                            >
+
+                                <tr>
+
+                                    <td colspan="7">
+                                        Loading evaluation...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 APPROVAL CENTER
+                 ================================================= -->
+
+            <section
+                id="approvalSection"
+                class="panel approval-panel"
+                style="display:none;"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Approval Center
+                        </h2>
+
+                        <span>
+                            Review high-risk AI actions
+                        </span>
+
+                    </div>
+
+
+                    <div class="approval-header-actions">
+
+                        <span
+                            id="approvalLastUpdated"
+                            class="last-updated"
+                        >
+                            -
+                        </span>
+
+
+                        <button
+                            id="approvalRefreshBtn"
+                            class="refresh-btn"
+                            type="button"
+                        >
+                            ↻ Refresh
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Approval Summary -->
+
+                <div class="approval-summary">
+
+                    <div class="approval-summary-card">
+
+                        <span>
+                            Pending Approvals
+                        </span>
+
+                        <strong
+                            id="pendingApprovalCount"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Pending Approvals -->
+
+                <div
+                    id="pendingApprovalList"
+                    class="approval-list"
+                >
+
+                    <div class="approval-empty">
+
+                        Loading approvals...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+                 ================================================= -->
+
+            <footer>
+
+                <span>
+                    Unified AI Governance &
+                    Security Platform
+                </span>
+
+                <span>
+                    Governance • Security • Compliance
+                </span>
+
+            </footer>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     APPLICATION JAVASCRIPT
+     ========================================================= -->
+
+<script src="/dashboard-ui/app.js?v=4"></script>
+
+<script src="/dashboard-ui/behavior_monitor.js?v=5"></script>
+
+
+
+<!-- =========================================================
+     SMALL COMPATIBILITY HANDLER
+     ========================================================= -->
+
+<script>
+
+    /*
+     * Approval Center refresh button.
+     *
+     * app.js creates/uses this button when
+     * the Approval view is opened.
+     */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target &&
+                event.target.id ===
+                "approvalRefreshBtn"
+            ) {
+
+                if (
+                    typeof loadApprovals ===
+                    "function"
+                ) {
+
+                    loadApprovals();
+                }
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{
+    "USER": {
+        "read": true,
+        "write": true,
+        "delete": false,
+        "execute": false,
+        "external_send": false,
+        "database_read": false,
+        "database_write": false
+    },
+
+    "AGENT": {
+        "read": true,
+        "write": false,
+        "delete": false,
+        "execute": false,
+        "external_send": false,
+        "database_read": false,
+        "database_write": false
+    },
+
+    "ADMIN": {
+        "read": true,
+        "write": true,
+        "delete": true,
+        "execute": true,
+        "external_send": true,
+        "database_read": true,
+        "database_write": true
+    },
+
+    "SYSTEM": {
+        "read": true,
+        "write": true,
+        "delete": true,
+        "execute": true,
+        "external_send": true,
+        "database_read": true,
+        "database_write": true
+    }
+}
